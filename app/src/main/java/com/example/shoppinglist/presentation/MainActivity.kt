@@ -19,6 +19,8 @@ class MainActivity : ComponentActivity() {
 
     private lateinit var viewModel: MainViewModel
 
+    private var count = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,8 +37,13 @@ class MainActivity : ComponentActivity() {
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.shopList.observe(this) {
             Log.d("MainActivityTest", it.toString())
+            if (count == 0) {
+                count++
+                val item = it[0]
+//                viewModel.deleteShopItem(item)
+                viewModel.changeEnableState(item)
+            }
         }
-        viewModel.getShopList()
     }
 }
 
