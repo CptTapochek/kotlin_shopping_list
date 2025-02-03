@@ -7,12 +7,12 @@ import com.example.shoppinglist.domain.ShopListRepository
 
 object ShopListRepositoryImpl: ShopListRepository {
     private val shopListLiveData = MutableLiveData<List<ShopItem>>()
-    private val shopList = mutableListOf<ShopItem>()
+    private val shopList = sortedSetOf<ShopItem>({o1, o2 -> o1.id.compareTo(o2.id)})    //Sorting list
     private var autoIncrementId = 0;
 
     init {
         // Blank data for test
-       for (idx in 0 until 10) {
+       for (idx in 0 until 10000) {
            val item = ShopItem("Item $idx", idx, true)
            addShoppItem(item)
        }
