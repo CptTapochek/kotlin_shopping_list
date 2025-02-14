@@ -17,6 +17,8 @@ recyclerviewSelection = "1.1.0"
 appcompat = "1.7.0"
 appcompatVersion = "1.6.1"
 composeMaterial = "1.4.0"
+composeThemeAdapter = "1.2.1"
+androidxMaterial = "1.7.8"
 
 [libraries]
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
@@ -42,6 +44,8 @@ material-v160 = { module = "com.google.android.material:material", version.ref =
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
 androidx-compose-material = { group = "androidx.wear.compose", name = "compose-material", version.ref = "composeMaterial" }
+compose-theme-adapter = { group = "com.google.android.material", name = "compose-theme-adapter", version.ref = "composeThemeAdapter" }
+androidx-material = { group = "androidx.compose.material", name = "material", version.ref = "androidxMaterial" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
