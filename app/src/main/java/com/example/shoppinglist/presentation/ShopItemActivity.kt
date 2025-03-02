@@ -8,7 +8,7 @@ import com.example.shoppinglist.R
 import com.example.shoppinglist.domain.ShopItem
 
 
-class ShopItemActivity : AppCompatActivity() {
+class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishingListen {
     private var screenMode = MODE_UNKNOWN
     private var shopItemId = ShopItem.UNDEFINED_ID
 
@@ -19,6 +19,10 @@ class ShopItemActivity : AppCompatActivity() {
         if(savedInstanceState == null) {
             lunchRightMode()
         }
+    }
+
+    override fun onEditingFinished() {
+        finish()
     }
 
     private fun lunchRightMode() {
